@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+	<!-- BEGIN head -->
+	
+<!-- Mirrored from radial.orange-themes.com/html/homepage-style-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:25:40 GMT -->
+<head th:include="common/masterpage :: headFragment">
+
+    <title>Dashboard</title>
+</head>
+
+	<!-- BEGIN body -->
+	<body class="top">
+
+
+		<!-- BEGIN .container -->
+		<div class="container">
+
+			<!-- BEGIN .main-header-wrapper -->
+			<div class="main-header-wrapper" th:fragment="main-header">
+
+				<div class="adv-left image"><a th:href="@{'/car/?type=1'}" ><img alt="" th:src="@{'/resources/images/cars/' + ${carsQuangCao[0].images[0].path}}" /></a></div>
+				<div class="adv-right image" ><a th:href="@{'/car/?type=2'}"><img alt="" th:src="@{'/resources/images/cars/' + ${carsQuangCao[1].images[0].path}}" /></a></div>
+				
+				<!-- BEGIN .header -->
+				<div class="header">
+
+					<!-- BEGIN .feedback-wrapper -->
+					<div class="feedback-wrapper">
+						<!-- BEGIN .feedback -->
+						<div class="feedback" style="background: url(/resources/images/ext/header-product-image-1.png) top right no-repeat;">
+							<table>
+								<tr>
+									<td>
+										<p class="text"><span>&quot;Thong tin lien he &quot;</span></p>
+										<p class="name"><span></span><i>4553534545</i></p> 
+									</td>
+								</tr>
+							</table>
+						<!-- END .feedback -->
+						</div>
+						<!-- BEGIN .feedback -->
+						<div class="feedback" style="background: url(/resources/images/ext/header-product-image-2.png) top right no-repeat;">
+							<table>
+								<tr>
+									<td>
+										<p class="text"><span>&quot;Beauty, elegance, power &amp; design&quot;</span></p>
+										<p class="name"><span>Aston Martin Virage</span><i> $ 150,000</i></p>
+									</td>
+								</tr>
+							</table>
+						
+						</div> 
+						<!-- END .feedback -->
+						<!-- BEGIN .feedback -->
+	 					<div class="feedback" style="background: url(/resources/images/ext/header-product-image-3.png) top right no-repeat;">
+							<table>
+								<tr>
+									<td>
+										<p class="text"><span>&quot;Retro styling with classic American muscle!&quot;</span></p>
+										<p class="name"><span>Ford Mustang</span><i>$ 60,000</i></p>
+									</td>
+								</tr>
+							</table>
+						
+						</div> 
+						<!-- END .feedback -->
+					<!-- END .feedback-wrapper -->
+					</div>
+
+					<!-- BEGIN .logo -->
+					<div class="logo"> 
+						<a href="#"><img th:src="@{/resources/images/ext/logo-radial-1.png}" alt="" width="226" height="87" /></a>
+					<!-- END .logo -->
+					</div>
+
+					<!-- BEGIN .no-logo -->
+					<!-- <table class="no-logo">
+						<tr>
+							<td>
+								<p><b>Radial</b></p>
+								<p>Automotive WordPress Theme</p>
+							</td>
+						</tr> -->
+					<!-- END .no-logo -->
+					<!-- </table> -->
+
+				<!-- END .header -->
+				</div>
+
+			<!-- END .main-header-wrapper -->
+			</div>
+
+
+			<!-- BEGIN .menu-primary-wrapper -->
+			<div class="menu-primary-wrapper" th:fragment="main-menu">
+				<!-- BEGIN .menu-primary -->
+				<div class="menu-primary">
+					<table>
+						<tr>
+							<td class="menu">
+								<ul>
+									<li><a href="/">Trang chủ</a></li>
+									<li>
+										<a href="#"><span>Loại xe cho thuê</span></a>
+										<ul>
+											<li><a th:href="@{'/car/?type=1'}">Xe tự lái</a></li>
+											<li><a th:href="@{'/car/?type=2'}">Xe du lịch</a></li>
+											<li><a th:href="@{'/car/?type=3'}">Xe số tự động</a></li>
+											<li><a th:href="@{'/car/?type=4'}">Xe cưới, dự án</a></li>
+										</ul> 
+									</li>
+									
+									<li><a th:href="@{'/event/?type=1'}">Thắng cảnh Đà Nẵng</a></li>
+									<li><a href="#"><span>Sự kiện</span></a>
+										<ul>
+											<li><a th:href="@{'/event/?type=2'}">Video nổi bật</a></li>
+											<li><a th:href="@{'/event/?type=3'}">Sự kiện khác</a></li>
+										</ul> 
+									</li>
+									<li><a th:href="@{'/contact'}">liên hệ</a></li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				<!-- END .menu-primary -->
+				</div>
+			<!-- END .menu-primary-wrapper -->
+			</div>
+
+
+			<!-- BEGIN .homepage-slider-wrapper -->
+			<div class="homepage-slider-wrapper" th:fragment="main-slider">
+				<!-- BEGIN .homepage-slider -->
+				<div class="homepage-slider">
+					<div id="control"></div>
+					<span class="border-overlay">&nbsp;</span>
+					<div id="homepage-slider">
+						<div th:each="car: ${carsSdlie}">						
+							<img th:src="@{'/resources/images/cars/' + ${car.images[0].path}}" th:alt="'&lt;a href=_post-style-1.html lorem urna, mollis hendrerit lacinia vitae, suscipit non ante&lt;/b&gt;&lt;/a&gt;&lt;p&gt; ' + ${car.shortDescription} + '&lt;/p&gt;'" width="100%" height="100%" />
+						</div>
+					</div>
+					<div id="navigation"></div>
+				<!-- BEGIN .homepage-slider -->
+				</div>
+			<!-- END .homepage-slider-wrapper -->
+			</div>
+
+
+			<!-- BEGIN .content-wrapper -->
+			<div class="content-wrapper">
+
+				<!-- BEGIN .content -->
+				<div class="content vn-font-content">
+
+					<!-- BEGIN .homepage-wrapper -->
+					<div class="homepage-wrapper">
+
+						<!-- BEGIN .homepage-title -->
+						<div class="homepage-title">
+							<!-- <p th:text="${info.description}"></p> -->
+							<span th:utext="${info.description}"> </span>
+						<!-- END .homepage-title -->
+						</div>
+
+						<!-- BEGIN .homepage-columns-1 -->
+						<div class="homepage-columns-1 homepage-columns-1-spacer">
+							<!-- BEGIN .item -->
+							<div class="item">
+								<h3><a th:href="@{'/car/?carId=' + ${carsYeuThich[0].id}}" th:text="${carsYeuThich[0].title}">Alfa Romeo Competizione</a></h3>
+								<a th:href="@{'/car/?carId=' + ${cars[0].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${carsYeuThich[0].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'"><span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${carsYeuThich[0].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/car/?carId=' + ${carsYeuThich[0].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item">
+								<h3><a th:href="@{'/car/?carId=' + ${carsYeuThich[1].id}}" th:text="${carsYeuThich[0].title}">Alfa Romeo Competizione</a></h3>
+								<a th:href="@{'/car/?carId=' + ${carsYeuThich[1].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${carsYeuThich[1].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'"><span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${carsYeuThich[1].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/car/?carId=' + ${carsYeuThich[1].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item">
+								<h3><a th:href="@{'/car/?carId=' + ${carsYeuThich[2].id}}" th:text="${carsYeuThich[2].title}">Alfa Romeo Competizione</a></h3>
+								<a th:href="@{'/car/?carId=' + ${cars[2].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${carsYeuThich[2].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'"><span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${carsYeuThich[2].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/car/?carId=' + ${carsYeuThich[2].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+						<!-- END .homepage-columns-1 -->
+						</div>
+
+						<!-- BEGIN .homepage-columns-1 -->
+						<div class="homepage-columns-1 homepage-columns-1-spacer" >
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventClips[0] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventClips[0].id}}" th:text="${eventClips[0].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventClips[0].imageEvents[0].path}}" />
+		                        </video>								
+								
+								<p th:utext="${eventClips[0].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventClips[0].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventClips[1] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventClips[1].id}}" th:text="${eventClips[1].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventClips[1].imageEvents[0].path}}" />
+		                        </video>
+								<p th:utext="${eventClips[1].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventClips[1].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventClips[2] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventClips[2].id}}" th:text="${eventClips[2].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventClips[2].imageEvents[0].path}}" />
+		                        </video>
+								<p th:utext="${eventClips[2].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventClips[2].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+						<!-- END .homepage-columns-1 -->
+						</div>
+
+						<!-- BEGIN .homepage-columns-1 -->
+						<div class="homepage-columns-1 homepage-columns-1-spacer">
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventOther[0] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventOther[0].id}}" th:text="${eventOther[0].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px" th:if="${!eventOther[1].imageEvents[0].image}">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventOther[0].imageEvents[0].path}}" />
+		                        </video>
+		                        <a th:if="${eventOther[0].imageEvents[0].image}" th:href="@{'/event/?eventId=' + ${eventOther[0].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${cars[1].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'">
+		                        
+								<span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${eventOther[0].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventOther[0].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventOther[1] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventOther[1].id}}" th:text="${eventOther[1].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px" th:if="${!eventOther[1].imageEvents[0].image}">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventOther[1].imageEvents[0].path}}" />
+		                        </video>
+		                        <a th:if="${eventOther[1].imageEvents[0].image}" th:href="@{'/event/?eventId=' + ${eventOther[1].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${cars[1].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'">
+								<span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${eventOther[1].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventOther[1].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+							<!-- BEGIN .item -->
+							<div class="item" th:if="${eventOther[2] != null}">
+								<h3><a th:href="@{'/event/?eventId=' + ${eventOther[2].id}}" th:text="${eventOther[2].title}">Alfa Romeo Competizione</a></h3>
+								<video  controls="controls" width="100%" height="200px" th:if="${!eventOther[2].imageEvents[0].image}">
+		                        	<source th:src="@{'/resources/images/events/' + ${eventOther[2].imageEvents[0].path}}" />
+		                        </video>
+		                        <a th:if="${eventOther[2].imageEvents[0].image}" th:href="@{'/event/?eventId=' + ${eventOther[2].id}}" class="image" th:style="'background: url(/resources/images/cars/' + ${cars[1].images[0].path} + ') center center no-repeat;background-size: 100% 100%;'">
+								<span class="glass">&nbsp;</span><img th:src="@{/resources/images/ext/homepage-columns-item-bg.png}" alt="" width="302" height="186" /></a>
+								<p th:utext="${eventOther[2].shortDescription}">Quisque eleifend mi at nisl pretium non dignissim felis euismod. Nullam sagittis Integertortor et eiaculi.</p>
+								<a th:href="@{'/event/?eventId=' + ${eventOther[2].id}}" class="more-link">xem thêm</a>
+							<!-- END .item -->
+							</div>
+						<!-- END .homepage-columns-1 -->
+						</div>
+
+
+						<div class="back-to-top"><a href="#top"><span>trở về đầu trang</span></a></div>
+
+					<!-- END .homepage-wrapper -->
+					</div>
+
+				<!-- END .content -->
+				</div>
+
+			<!-- END .content-wrapper -->
+			</div>
+
+			<div class="clear-footer"></div>
+
+		<!-- END .container -->
+		</div>
+
+		<!-- BEGIN .main-footer-wrapper -->
+		<div class="main-footer-wrapper" th:fragment="main-footer">
+
+			<!-- BEGIN .footer -->
+			<div class="footer">
+
+				<!-- BEGIN .contact-information -->
+				<div class="contact-information">
+					<h3>Thông tin liên hệ</h3>
+					<div class="address">
+						<p><span th:text="${info.name}">&quot;Your Places Name&quot;</span></p>
+						<p th:text="${info.address}">235 Regent Street, London, W1B 2EL</p>
+					</div>
+					<div class="phone">
+						<p th:text="${info.phone}">+371 7153 967834</p>
+					</div>
+					<div class="email">
+						<p><a href="#" th:text="${info.email}">reservations@orange-themes.com</a></p>
+					</div>
+				<!-- END .contact-information -->
+				</div>
+
+				<!-- BEGIN .contact-information -->
+				<div class="contact-information">
+					<h3>Địa điểm công ty</h3>
+					<div class="map">
+						<iframe width="250" height="132" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=132&amp;hl=en&amp;q=222%20%C4%90i%E1%BB%87n%20Bi%C3%AAn%20Ph%E1%BB%A7%2C%20Ch%C3%ADnh%20Gi%C3%A1n%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng%2C%20Vietnam%20+(C%C3%B4ng%20Ty%20Ph%C3%BA%20Thi%E1%BB%87n%20H%C6%B0ng%20)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+					</div>
+				<!-- END .contact-information -->
+				</div>
+
+				
+				<!-- BEGIN .map-wrapper -->
+<!-- 				<div class="map-wrapper">
+					<h3>Địa điểm công ty</h3>
+					<div class="map">
+						<iframe width="250" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.maps.ie/create-google-map/map.php?width=100%&amp;height=200&amp;hl=en&amp;q=222%20%C4%90i%E1%BB%87n%20Bi%C3%AAn%20Ph%E1%BB%A7%2C%20Ch%C3%ADnh%20Gi%C3%A1n%2C%20%C4%90%C3%A0%20N%E1%BA%B5ng%2C%20Vietnam%20+(C%C3%B4ng%20Ty%20Ph%C3%BA%20Thi%E1%BB%87n%20H%C6%B0ng%20)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+					</div>
+				
+				</div> -->
+				<!-- END .map-wrapper -->
+				<!-- BEGIN .social-networks -->
+				<div class="events">
+					<h3>Sự kiện</h3>
+					<div class="item">
+						<p class="date" th:each="event, eventIndex: ${events}" th:classappend="${eventIndex.index > 4} ? 'hidden'"><a style="color: white;" th:href="@{'/event/?eventId=' + ${event.id}}"  th:text="${event.title}" class="ellipsis">rfgdfg fdg df</a></p>
+					</div>				
+				</div>  
+				<!-- END .social-networks -->
+
+			<!-- END .footer -->
+			</div>
+
+			<!-- BEGIN .copyright -->
+			<div class="copyright">
+				Copyright &amp; lkdfjsldf sdfs dflkjslfj s
+			<!-- END .copyright -->
+			</div>
+
+		<!-- END .main-footer-wrapper -->
+		</div>
+
+
+	<!-- END body -->
+	</body>
+
+<!-- END html -->
+
+<!-- Mirrored from radial.orange-themes.com/html/homepage-style-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:26:35 GMT -->
+</html>

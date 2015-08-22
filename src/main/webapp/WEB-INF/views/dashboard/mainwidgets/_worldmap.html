@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div th:fragment="worldMapFragment">
+    <h2 class="tile-title">Live Visits</h2>
+
+    <div class="tile-config dropdown">
+        <a data-toggle="dropdown" href="#" class="tile-menu"></a>
+        <ul class="dropdown-menu pull-right text-right">
+            <li><a href="#">Refresh</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+
+    <div id="world-map" style="height: 320px;"></div>
+    <div class="map-float-table width-sm hidden-xs p-15">
+        <h4 class="m-t-0"><i class="fa fa-map-marker text-danger m-r-5"></i> Total Sessions</h4>
+        <div data-scrollbar="true" class="height-md map-legend">
+            <table class="table table-inverse" id="most-session-table">
+                <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Total Session</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

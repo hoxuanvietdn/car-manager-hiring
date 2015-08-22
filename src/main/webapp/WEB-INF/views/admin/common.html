@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Mobile analytic</title>
+    <link href="/resources/css/bootstrap.min.css" th:href="@{/resources/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <link href="/resources/css/admin.css" th:href="@{/resources/css/admin.css}" rel="stylesheet"/>
+
+    <!-- Bootstrap -->
+    <script th:src="@{/resources/javascript/plugins/bootstrap.min.js}"></script>
+
+    <!-- jQuery UI -->
+    <script src="/resources/javascript/plugins/jquery.min.js" th:src="@{/resources/javascript/plugins/jquery.min.js}"></script>
+    <!-- jQuery Library -->
+    <script src="/resources/javascript/plugins/jquery-ui.min.js" th:src="@{/resources/javascript/plugins/jquery-ui.min.js}"></script>
+    <!-- jQuery UI -->
+    <script src="/resources/javascript/plugins/jquery.easing.1.3.js" th:src="@{/resources/javascript/plugins/jquery.easing.1.3.js}"></script>
+    <!-- jQuery Easing - Requirred for Lightbox + Pie Charts-->
+
+    <script src="/resources/javascript/admin.js" th:src="@{/resources/javascript/admin.js}"></script>
+
+</head>
+
+<body>
+<!-- Header -->
+<div id="header" th:fragment="header (userName)">
+    <div class="shell">
+        <!-- Logo + Top Nav -->
+        <div id="top">
+            <h1><a href="#">Analytic admin</a></h1>
+            <div id="top-navigation">
+                Welcome <a href="#"><strong th:text="${userName}">Administrator</strong></a>
+                <span>|</span>
+                <a href="#">Help</a>
+                <span>|</span>
+                <a href="#">Profile Settings</a>
+                <span>|</span>
+                <a href="#">Log out</a>
+            </div>
+        </div>
+        <!-- End Logo + Top Nav -->
+
+        <!-- Main Nav -->
+        <div id="navigation">
+            <ul>
+                <li><a href="#" class="active"><span>Users account</span></a></li>
+                <li><a href="#"><span>Roles and permissions</span></a></li>
+            </ul>
+        </div>
+        <!-- End Main Nav -->
+    </div>
+</div>
+<!-- End Header -->
+
+<!-- Footer -->
+<div id="footer" th:fragment="footer">
+    <div class="shell">
+        <span class="left">Axon vibe</span>
+		<span class="right">
+			Design by <a href="http://axonactive.vn" target="_blank" title="">axonactive.vn</a>
+		</span>
+    </div>
+</div>
+<!-- End Footer -->
+
+</body>
+
+</html>

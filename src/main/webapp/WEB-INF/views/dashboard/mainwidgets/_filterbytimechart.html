@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div th:fragment="filterByTimeChart">
+    <h2 class="tile-title" id="filterByTimeChartName">STATISTICS BY TODAY</h2>
+
+    <div class="tile-config dropdown">
+        <a data-toggle="dropdown" href="#" class="tile-menu"></a>
+        <ul class="dropdown-menu pull-right text-right">
+            <li><a class="tile-info-toggle" href="#">Chart Information</a></li>
+            <li><a href="#">Refresh</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+    <div class="p-10">
+        <div id="filter-bytime-chart" class="main-chart" style="height: 300px"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+	<!-- BEGIN head -->
+	
+<!-- Mirrored from radial.orange-themes.com/html/homepage-style-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:25:40 GMT -->
+<head th:include="common/masterpage :: headFragment">
+
+    <title>Contact</title>
+</head>
+
+	<!-- BEGIN body -->
+	<body class="top">
+
+
+		<!-- BEGIN .container -->
+		<div class="container">
+
+			<!-- BEGIN .main-header-wrapper -->
+			<div  class="main-header-wrapper"  th:include="home :: main-header">
+			
+			</div>
+
+			<div class="menu-primary-wrapper" th:include="home :: main-menu">
+			
+			</div>
+
+			<div class="homepage-slider-wrapper" th:include="home :: main-slider">
+			
+			</div>
+			
+
+			<!-- BEGIN .content-wrapper -->
+			<div class="content-wrapper">
+
+				<!-- BEGIN .content -->
+				<div class="content">
+
+					<!-- BEGIN .main-content-wrapper -->
+					<div class="main-content-wrapper">
+						<!-- BEGIN .main-content -->
+						<div class="main-content">
+
+
+							<!-- BEGIN .left-side -->
+							<div class="left-side">
+
+								<!-- BEGIN .main-title -->
+								<div class="main-title">
+									<span><b>Form</b></span>
+									<a href="#">Trang chủ</a>
+								<!-- END .main-title -->
+								</div>
+
+								<!-- BEGIN .post -->
+								<div class="post">
+
+									<h3>Thông tin để được đáp ứng dịch vụ</h3>
+
+									<p>df fkljls fjlsfjslfkjsklfj lfjsl fsfleuoiwuroewuro iwr jwelreio kljfsf sfsf sklf f sfklsj kldsfj klsjl slfkj .</p>
+
+									<form th:action="@{'/saveContact'}" class="contact-form" th:object="${contact}">
+										<input type="hidden" th:field="*{id}" />
+										<table>
+											<tr>
+												<td class="label">Tên:</td>
+												
+												<td><p class="input-text-1"><span><input type="text" class="form-control validate[required]" th:field="*{name}"/></span></p></td>
+											</tr>
+											<tr><td class="spacer-1" colspan="2"></td></tr>
+											<tr>
+												<td class="label">E-mail:</td>
+												<td><p class="input-text-1"><span><input type="text" class="form-control validate[required,custom[email]]" th:field="*{email}" /></span></p></td>
+											</tr>
+											<tr><td class="spacer-1" colspan="2"></td></tr>
+											<tr>
+												<td class="label">Phone:</td>
+												<td><p class="input-text-1"><span><input type="text" class="form-control validate[required,custom[email]]" th:field="*{phone}" /></span></p></td>
+											</tr>
+											<tr><td class="spacer-1" colspan="2"></td></tr>
+											<tr>
+												<td class="label">Nội dung:</td>
+												<td>
+													<div class="text-area-1">
+														<div class="top">
+															<textarea class="form-control validate[required]" th:field="*{content}"></textarea>
+														</div>
+														<div class="bottom"></div>
+													</div>
+												</td>
+											</tr>
+											<tr><td class="spacer-2" colspan="2"></td></tr>
+											<tr>
+												<td></td>
+												<td><p class="show-all"><button size="small" align="left">Gửi yêu cầu</button></p></td>
+											</tr>
+										</table>
+									</form>
+
+								<!-- END .post -->
+								</div>
+
+							<!-- END .left-side -->
+							</div>
+
+
+							<!-- BEGIN .sidebar -->
+							<div class="sidebar">
+
+								<!-- BEGIN .latest-activity -->
+								<div class="latest-activity sidebar-item" th:include="car::left-cars">
+
+								<!-- END .latest-activity -->
+								</div>
+		
+								<!-- BEGIN .events -->
+								<div class="events sidebar-item" th:include="event::left-events">
+								</div>
+							<!-- END .sidebar -->
+							</div>
+
+						<!-- END .main-content -->
+						</div>
+						<div class="main-content-bottom">&nbsp;</div>
+					<!-- END .main-content-wrapper -->
+					</div>
+
+
+				<!-- END .content -->
+				</div>
+
+			<!-- END .content-wrapper -->
+			</div>
+
+			<div class="clear-footer"></div>
+
+		<!-- END .container -->
+		</div>
+
+
+		<!-- BEGIN .main-footer-wrapper -->
+		<div class="main-footer-wrapper" th:include="home :: main-footer"></div>
+		
+		<script src="/resources/javascript/plugins/bootstrap.min.js" th:src="@{/resources/javascript/plugins/bootstrap.min.js}"></script>
+		    <script src="/resources/javascript/validation/validate.min.js"
+            th:src="@{/resources/javascript/validation/validate.min.js}"></script>
+		    jQuery Form Validation Library
+		    <script src="/resources/javascript/validation/validationEngine.min.js"
+            th:src="@{/resources/javascript/validation/validationEngine.min.js}"></script>
+            
+	<!-- END body -->
+	</body>
+
+<!-- END html -->
+
+<!-- Mirrored from radial.orange-themes.com/html/shortcodes-contact-form.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:32:00 GMT -->
+</html>

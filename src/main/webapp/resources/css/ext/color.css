@@ -1,0 +1,12 @@
+a, .main-title a, .top-error-message, .blog-list-1 .item .date a, .top-error-message, .blog-list-1 .item .date a, .blog-list-1 .item .text h4 a, .blog-list-2 .item .date a, .blog-list-2 .item .text h4 a, .events .item h5 a, .post h3 a, .post a, .post .gallery-preview-box .show-all-photos, .photo-gallery-open .thumbnails .active span { color: #c81300; }
+
+
+.menu-primary li:hover > a, .menu-primary ul ul, .menu-primary ul ul ul, .menu-card-navigation .previous, .menu-card-navigation .next, .menu-primary li:hover > a, .menu-primary ul ul { background-color: #b71100; }
+
+
+a:hover, .main-title a:hover, .back-to-top a:hover, .homepage-columns-1 .item h3 a:hover, .blog-list-1 .item .date a:hover, .blog-list-1 .item .text h4 a:hover, .blog-list-2 .item .date a:hover, .blog-list-2 .item .text h4 a:hover, .events .item h5 a:hover, .events .item .date a:hover, .latest-activity .text h5 a:hover, .basic-1 .email a:hover, .pages a:hover, .pages a:active, .pages .active, .pages .active:hover, .post h3 a:hover, .post a:hover, .post .gallery-preview-box .show-all-photos:hover, .menu-card .item .title a:hover, .reservations .previous:hover, .reservations .next:hover, .reservations .previous:active, .reservations .next:hover, .photo-gallery .index-item a:hover, .photo-gallery-open h3 a:hover, .photo-gallery-open .previous:hover, .photo-gallery-open .next:hover, .photo-gallery-open .previous:active, .photo-gallery-open .next:hover { color: #ff1800; }
+
+
+.more-link { background-color: #b71100; }
+.more-link:hover { background-color: #d61400 }
+.more-link:active { background-color: #a30f00 }

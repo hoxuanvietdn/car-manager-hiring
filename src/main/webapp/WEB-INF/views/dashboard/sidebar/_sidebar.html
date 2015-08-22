@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+<aside th:fragment="sidebarFragment">
+    <ul class="list-unstyled side-menu visible-xs" th:include="dashboard/sidebar/_sidemenu :: sidemenuFragment"/>
+
+    <!-- Sidebar Widgets -->
+    <div class="side-widgets overflow">
+        <!-- Profile Menu -->
+        <div class="text-center s-widget m-b-25 dropdown" id="profile-menu" th:include="dashboard/sidebar/_profilemenu :: profilemenuFragment"/>
+
+        <!-- Calendar -->
+        <!--<div class="s-widget m-b-25" th:include="dashboard/sidebar/_calendar :: calendarFragment" />-->
+
+        <!-- Feeds -->
+        <!--<div class="s-widget m-b-25" th:include="dashboard/sidebar/_feed :: feedFragment" />-->
+
+        <!-- Projects -->
+        <!--<div class="s-widget m-b-25" th:include="dashboard/sidebar/_project :: projectFragment"/>-->
+    </div>
+
+
+</aside>
+</body>
+</html>

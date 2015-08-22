@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:include="masterlayout/masterpage :: headFragment">
+<title>Git Status</title>
+</head>
+<body id="skin-blur-violate">
+
+	<!-- Begin page content -->
+	<div class="container">
+		<div class="page-header">
+			<h1>Properties</h1>
+		</div>
+
+		<table class="table table-striped">
+			<tbody>
+				<tr th:each="entry: ${properties}">
+					<td th:text="${entry.key}"></td>
+					<td th:text="${entry.value}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="/ie10-viewport-bug-workaround.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" />
+</body>
+</html>

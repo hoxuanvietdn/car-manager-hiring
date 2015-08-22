@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" class="menu-active">
+<head th:include="masterlayout/masterpage :: headFragment">
+    <title>Dashboard</title>
+</head>
+<body id="skin-blur-violate" th:attr="id=${session.userSkin}">
+<header id="header" class="media" th:include="masterlayout/masterpage :: headerFragment"></header>
+
+<div class="clearfix"></div>
+
+<section id="main" class="p-relative" role="main">
+    <!-- Side Menu -->
+    <ul class="list-unstyled side-menu hidden-xs" th:include="dashboard/sidebar/_sidemenu :: sidemenuFragment"/>
+    <!-- Sidebar -->
+    <aside id="sidebar" class="toggled" th:include="dashboard/sidebar/_sidebar :: sidebarFragment"/>
+
+    <!-- Content -->
+    <section id="content" class="container">
+
+        <!-- Messages Drawer -->
+        <!--<div id="messages" class="tile drawer animated" th:include="masterlayout/header/_messagesdrawer :: messagesdrawerFragment" />-->
+
+        <!-- Notification Drawer -->
+        <!--<div id="notifications" class="tile drawer animated" th:include="masterlayout/header/_notificationdrawer :: notificationdrawerFragment" />-->
+
+        <h4 class="page-title">RESOLUTIONS</h4>
+
+        <div id="date-selector" th:include="dashboard/_filtertime :: filtertimeFragment" />
+        <!-- Platform & Device-->
+
+        <div class="block-area" th:include="dashboard/_resolution :: resolution" />
+
+    </section>
+</section>
+<div th:include="masterlayout/masterpage :: pluginScriptLibraryFragment" ></div>
+<div th:include="masterlayout/masterpage :: chartScriptLibraryFragment" ></div>
+<script src="/resources/javascript/charts/resolution-pie-chart.js" th:src="@{/resources/javascript/charts/resolution-pie-chart.js}"></script>
+<div th:include="masterlayout/masterpage :: scriptAboutDateRangePickerFragment" ></div>
+<script>
+    $('.sa-side-analytic').parent().addClass('active');
+    $('.sa-side-analytic').parent().children("ul").children("li:nth-child(3)").children().addClass('active');
+</script>
+</body>
+</html>

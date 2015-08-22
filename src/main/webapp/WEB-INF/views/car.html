@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+	<!-- BEGIN head -->
+	
+<!-- Mirrored from radial.orange-themes.com/html/homepage-style-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:25:40 GMT -->
+<head th:include="common/masterpage :: headFragment">
+
+    <title>Car</title>
+</head>
+
+	<!-- BEGIN body -->
+	<body class="top">
+
+
+		<!-- BEGIN .container -->
+		<div class="container">
+
+
+			<!-- BEGIN .main-header-wrapper -->
+			<div  class="main-header-wrapper"  th:include="home :: main-header">
+			
+			</div>
+
+			<div class="menu-primary-wrapper" th:include="home :: main-menu">
+			
+			</div>
+
+			<div class="homepage-slider-wrapper" th:include="home :: main-slider">
+			
+			</div>
+			
+			<!-- BEGIN .content-wrapper -->
+			<div class="content-wrapper">
+
+				<!-- BEGIN .content -->
+				<div class="content">
+
+					<!-- BEGIN .main-content-wrapper -->
+					<div class="main-content-wrapper">
+						<!-- BEGIN .main-content -->
+						<div class="main-content">
+
+
+							<!-- BEGIN .left-side -->
+							<div class="left-side" th:if="${car != null}">
+
+								<!-- BEGIN .main-title -->
+								<div class="main-title">
+									<span><b>Chi tiết xe</b></span>
+									<a href="/">Trang chủ</a>
+								<!-- END .main-title -->
+								</div>
+
+								<!-- BEGIN .post -->
+								<div class="post">
+
+									<h3><a href="#" th:text="${car.title}">Mauris tristique, orci eu elemen accumsan, arcu arcu porttitor</a></h3>
+<!-- 
+									<div class="date">
+										<p class="post-day">12 January, 2001</p>
+										<p class="author"><a href="#">John Smith</a></p>
+										<p class="section"><a href="#">Section</a></p>
+										<p class="comments"><a href="#">11 comments</a></p>
+									</div> -->
+									<p th:utext="${car.shortDescription}"></p>
+									<div class="auto-fix">
+									
+										<img th:each="image: ${car.images}" th:src="@{'/resources/images/cars/' + ${image.path}}" class="post-image-2" alt="" />
+									</div>
+									<div class="clear"></div>
+									<p class="caps" th:utext="${car.fullDescription}"></p>
+									
+								<!-- END .post -->
+								</div>
+								
+								<!-- BEGIN .back-to-homepage -->
+								<div class="back-to-homepage">
+									<a href="/" class="btn-1 btn-1-color-default">Về trang chủ</a>
+								<!-- END .back-to-homepage -->
+								</div>
+
+							<!-- END .left-side -->
+							</div>
+
+							<div class="left-side" th:unless="${car != null}">Không có xe nào</div>
+							
+							<!-- BEGIN .sidebar -->
+							<div class="sidebar">
+
+								<!-- BEGIN .latest-activity -->
+								<div class="latest-activity sidebar-item" th:fragment="left-cars">
+									<!-- BEGIN .main-title -->
+									<div class="main-title">
+										<span><b>Xe cho thuê</b></span>
+										<a onclick="showAllCars();">xem toàn bộ</a>
+									<!-- END .main-title -->
+									</div>
+
+									<!-- BEGIN .content -->
+									<div class="content">
+										<!-- BEGIN .activity-item -->
+										<div class="activity-item" th:each="car, carIndex : ${cars}" th:classappend="${carIndex.index > 2} ? 'hidden'">
+												<div class="image">
+													<a th:href="@{'/car/?carId=' + ${car.id}}"><img th:src="@{'/resources/images/cars/' + ${car.images[0].path}}" alt="" width="60" height="60" /></a>
+												</div>
+												<div class="text">
+													<h5><a th:href="@{'/car/?carId=' + ${car.id}}" th:text="${car.title}"></a></h5>
+													<p><a th:href="@{'/car/?carId=' + ${car.id}}" class="more-link">Chi tiết</a></p>
+												</div>
+
+										<!-- END .activity-item -->
+										</div>
+										
+									<!-- END .content -->
+									</div>
+								<!-- END .latest-activity -->
+								</div>
+
+								<!-- BEGIN .events -->
+								<div class="events sidebar-item" th:include="event::left-events">
+								</div>
+							<!-- END .sidebar -->
+							</div>
+
+
+						<!-- END .main-content -->
+						</div>
+						<div class="main-content-bottom">&nbsp;</div>
+					<!-- END .main-content-wrapper -->
+					</div>
+
+
+					<div class="back-to-top"><a href="#top"><span>Về đầu trang</span></a></div>
+
+
+				<!-- END .content -->
+				</div>
+
+			<!-- END .content-wrapper -->
+			</div>
+
+			<div class="clear-footer"></div>
+
+		<!-- END .container -->
+		</div>
+
+
+		<!-- BEGIN .main-footer-wrapper -->
+		<div class="main-footer-wrapper" th:include="home :: main-footer">
+
+
+		<!-- END .main-footer-wrapper -->
+		</div>
+
+
+	<!-- END body -->
+	</body>
+
+<!-- END html -->
+
+<!-- Mirrored from radial.orange-themes.com/html/post-style-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Jul 2015 15:29:17 GMT -->
+</html>

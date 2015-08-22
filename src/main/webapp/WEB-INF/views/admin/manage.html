@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="admin/common :: head" />
+
+<body>
+
+	<!-- Header -->
+	<div id="header" th:include="admin/common :: header (${currentUser.getUsername()})" />
+	<!-- End Header -->
+
+	<!-- Container -->
+	<div id="container">
+		<div class="shell">
+
+			<!-- Small Nav -->
+			<div class="small-nav">
+				<a href="#">Admin</a>
+				<span>&gt;</span>
+				Users account
+			</div>
+			<!-- End Small Nav -->
+
+			<!-- Message OK -->
+			<div class="msg msg-ok">
+				<p><strong>Updated succesifully!</strong></p>
+				<a href="#" class="close">close</a>
+			</div>
+			<!-- End Message OK -->
+
+			<!-- Message Error -->
+			<div class="msg msg-error">
+				<p><strong>You must select a user!</strong></p>
+				<a href="#" class="close">close</a>
+			</div>
+			<!-- End Message Error -->
+			<br />
+			<!-- Main -->
+			<div id="main">
+				<div class="cl">&nbsp;</div>
+
+				<!-- Content -->
+				<div id="content">
+
+					<!-- Box -->
+					<div class="box">
+						<!-- Box Head -->
+						<div class="box-head">
+							<h2 class="left">Users account </h2>
+							<div class="right">
+								<label>search user</label>
+								<input type="text" class="field small-field" />
+								<input type="submit" class="button" value="search" />
+							</div>
+						</div>
+						<!-- End Box Head -->
+
+						<!-- Table -->
+						<div class="table">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<th width="13"><input type="checkbox" class="checkbox" /></th>
+									<th>User name</th>
+									<th>User email</th>
+									<th>Date</th>
+									<th>Active</th>
+									<th width="110" class="ac">Content Control</th>
+								</tr>
+
+								<tr th:each="user : ${users}">
+									<td><input type="checkbox" class="checkbox" /></td>
+									<td><h3><a href="#" th:text="${user.userName}"></a></h3></td>
+									<td><h3><a href="#" th:text="${user.userEmail}"></a></h3></td>
+									<td th:text="${user.createDate}"></td>
+									<td th:text="${user.isEnable()}"></td>
+									<td><a data-toggle="modal" href="#modalDelete" th:attr="onclick='javascript:showModalDelete(\'' + ${user.userId} + '\');'" class="btn btn-sm">Delete</a>
+										<a th:href="@{/admin/editUser/} + ${user.userId}" class="ico edit">Edit</a></td>
+								</tr>
+							</table>
+
+
+							<!-- Pagging -->
+							<div class="pagging">
+								<div class="left">Showing 1-12 of 44</div>
+								<div class="right">
+									<a href="#">Previous</a>
+									<a href="#">1</a>
+									<a href="#">2</a>
+									<a href="#">3</a>
+									<a href="#">4</a>
+									<a href="#">245</a>
+									<span>...</span>
+									<a href="#">Next</a>
+									<a href="#">View all</a>
+								</div>
+							</div>
+							<!-- End Pagging -->
+
+						</div>
+						<!-- Table -->
+
+					</div>
+					<!-- End Box -->
+
+					<!-- Box -->
+					<div class="box" th:if="${user != null}">
+						<!-- Box Head -->
+						<div class="box-head">
+							<h2>Add New User</h2>
+						</div>
+						<!-- End Box Head -->
+
+						<form method="post" th:action="@{/admin/saveUser}" th:object="${user}" data-toggle="validator">
+
+							<!-- Form -->
+							<div class="form">
+									<p>
+										<span class="req">max 30 symbols</span>
+										<label>Email<span>(Required Field)</span></label>
+										<input type="text" class="field size1" th:field="*{userEmail}" id="emailUser"/>
+										<small class="text-danger" data-th-if="${#fields.hasErrors('userEmail')}" data-th-errors="*{userEmail}" th:errors="*{userEmail}"></small>
+									</p>
+									<p class="inline-field">
+										<label>Role</label>
+										<select class="field size8" name="roleId">
+											<option th:each="role : ${roles}" th:text="${role.getRoleName()}" th:value="${role.getRoleId()}">Admin</option>
+										</select>
+									</p>
+									<p class="inline-field" th:if="${user.getUserId() > 0}">
+										<label>User Status</label>
+										<select class="field size8" name="user_status">
+											<option th:selected="${user.isEnable() == true}" value="1">Activate</option>
+											<option th:selected="${user.isEnable() == false}" value="0">Deactivate</option>
+										</select>
+									</p>
+								<input type="hidden"
+									   th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+								<input type="hidden" th:field="*{userId}" id="userId"/>
+								<input type="hidden" th:field="*{userName}" id="userName"/>
+								<input type="hidden" th:field="*{firstName}" id="firstName"/>
+								<input type="hidden" th:field="*{lastName}" id="lastName"/>
+								<input type="hidden" th:field="*{password}" id="password"/>
+								<input type="hidden" th:field="*{activationCode}" id="activationCode"/>
+								<input type="hidden" th:field="*{resetPwdToken}" id="resetPwdToken"/>
+							</div>
+							<!-- End Form -->
+
+							<!-- Form Buttons -->
+							<div class="buttons">
+								<input type="button" class="button" value="preview" />
+								<input type="submit" class="button" value="submit" />
+							</div>
+							<!-- End Form Buttons -->
+						</form>
+					</div>
+					<!-- End Box -->
+
+				</div>
+				<!-- End Content -->
+
+				<!-- Sidebar -->
+				<div id="sidebar">
+
+					<!-- Box -->
+					<div class="box">
+
+						<!-- Box Head -->
+						<div class="box-head">
+							<h2>Management</h2>
+						</div>
+						<!-- End Box Head-->
+
+						<div class="box-content">
+							<a th:href="@{/admin/addUser/}" class="add-button"><span>Add new User</span></a>
+							<div class="cl">&nbsp;</div>
+
+							<p class="select-all"><input type="checkbox" class="checkbox" /><label>select all</label></p>
+							<p><a href="#">Delete Selected</a></p>
+
+							<!-- Sort -->
+							<div class="sort">
+								<label>Sort by</label>
+								<select class="field">
+									<option value="">User name</option>
+								</select>
+								<select class="field">
+									<option value="">Email</option>
+								</select>
+								<select class="field">
+									<option value="">Date</option>
+								</select>
+							</div>
+							<!-- End Sort -->
+
+						</div>
+					</div>
+					<!-- End Box -->
+				</div>
+				<!-- End Sidebar -->
+
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- Main -->
+		</div>
+	</div>
+	<!-- End Container -->
+
+	<!-- Dialog confirm when delete user -->
+	<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Delete Confirm</h4>
+				</div>
+				<div class="modal-body">
+					<input id="default-link" type="hidden" th:value="@{/admin/deleteuser/}"/>
+					<p>are you sure to delete this user?</p>
+				</div>
+				<div class="modal-footer">
+					<a th:href="@{/admin/deleteUser/}" class="btn btn-danger" id="btn-delete">Delete</a>
+					<button type="button" class="btn btn-sm" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End delete dialog -->
+
+	<!-- Footer -->
+	<div id="footer" th:include="admin/common :: footer" />
+	<!-- End Footer -->
+<script type="application/javascript">
+
+</script>
+</body>
+</html>

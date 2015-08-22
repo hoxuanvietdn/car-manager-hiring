@@ -1,0 +1,59 @@
+.content.vn-font-content span {
+	font-size: 14px;
+}
+.content.vn-font-content h3 {
+	font-size: 16px;
+}
+.auto-fix img {
+	max-width:100%; 
+	max-height:100%;
+	margin:auto;
+	display:block;
+	clear: bold;
+}
+
+.auto-fix {
+	width: 80%;
+	margin:auto;
+}
+
+.fix-margin-top-center {
+	text-align: center;
+	margin-top: 2px;
+	width: 100%;
+}
+
+div.adv-left > a > img {
+	width: 152px;
+	position: fixed;
+	height: auto;
+	left: 3px;
+	z-index: 2;
+	bottom: 3px;
+	border-radius: 2px;
+}
+
+div.adv-right > a > img {
+	width: 152px;
+	position: fixed;
+	height: auto;
+	right: 3px;
+	bottom: 3px;
+	z-index: 2;
+	border-radius: 2px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	cursor: pointer;
+}

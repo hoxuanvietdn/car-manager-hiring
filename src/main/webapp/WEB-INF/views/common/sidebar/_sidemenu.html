@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+<ul th:fragment="sidemenuFragment">
+    <li class="dropdown">
+        <a class="sa-side-analytic" href="#">
+            <span class="menu-item">Quản lý Người dùng</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a th:href="@{/admin}">Cập nhật quản trị viên</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-analytic" href="#">
+            <span class="menu-item">Công ty</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a th:href="@{/admin/info}">Thông tin chung</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-analytic" href="#">
+            <span class="menu-item">Quản lý tin tức</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a th:href="@{/admin/event?type=1}">Thắng cảnh Đà Nẳng</a></li>
+            <li><a th:href="@{/admin/event?type=2}">Video nổi bật</a></li>
+            <li><a th:href="@{/admin/event?type=3}">Sự kiện khác</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-analytic" href="#">
+            <span class="menu-item">Quản lý xe</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a th:href="@{/admin/car?type=1}">Xe tự lái</a></li>
+            <li><a th:href="@{/admin/car?type=2}">Xe du lich</a></li>
+            <li><a th:href="@{/admin/car?type=3}">Số tự động</a></li>
+            <li><a th:href="@{/admin/car?type=4}">Xe cưới, dự án,</a></li>
+            <li><a th:href="@{/admin/car?type=5}">Nền slide</a></li>
+            <li><a th:href="@{/admin/car?type=6}">Quảng cáo</a></li>
+            <li><a th:href="@{/admin/car?type=7}">Xe yêu thích nhất</a></li>
+        </ul>
+    </li>
+    <!--<li>
+        <a class="sa-side-widget" href="#">
+            <span class="menu-item">Widgets</span>
+        </a>
+    </li>
+    <li>
+        <a class="sa-side-table" href="#">
+            <span class="menu-item">Tables</span>
+        </a>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-form" href="#">
+            <span class="menu-item">Form</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a href="#">Basic Form Elements</a></li>
+            <li><a href="#">Form Components</a></li>
+            <li><a href="#">Form Examples</a></li>
+            <li><a href="#">Form Validation</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-ui" href="#">
+            <span class="menu-item">User Interface</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a href="#">Buttons</a></li>
+            <li><a href="#">Labels</a></li>
+            <li><a href="#">Images &amp; Icons</a></li>
+            <li><a href="#">Alerts</a></li>
+            <li><a href="#">Media</a></li>
+            <li><a href="#">Components</a></li>
+            <li><a href="#">Others</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-photos" href="#">
+            <span class="menu-item">PHOTO GALLERY</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+
+            <li><a href="#">Photo Gallery</a></li>
+        </ul>
+    </li>
+    <li>
+        <a class="sa-side-chart" href="#">
+            <span class="menu-item">Charts</span>
+        </a>
+    </li>
+    <li>
+        <a class="sa-side-folder" href="#">
+            <span class="menu-item">File Manager</span>
+        </a>
+    </li>
+    <li>
+        <a class="sa-side-calendar" href="#">
+            <span class="menu-item">Calendar</span>
+        </a>
+    </li>
+    <li class="dropdown">
+        <a class="sa-side-page" href="#">
+            <span class="menu-item">Pages</span>
+        </a>
+        <ul class="list-unstyled menu-item">
+            <li><a href="#">List View</a></li>
+            <li><a href="#">Profile Page</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">404 Error</a></li>
+        </ul>
+    </li>-->
+</ul>
+</body>
+</html>

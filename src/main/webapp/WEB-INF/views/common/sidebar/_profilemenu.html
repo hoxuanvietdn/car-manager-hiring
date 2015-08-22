@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title></title>
+    
+</head>
+<body>
+<div th:fragment="profilemenuFragment">
+    <a href="#" data-toggle="dropdown">
+        <img class="profile-pic animated" th:src="@{/resources/images/profile-pic.jpg}" alt=""/>
+    </a>
+    <h4 class="m-0 ellipsis uppercase" sec:authorize="isAuthenticated()"><span sec:authentication="principal.username" class=""></span></h4>
+    <ul class="dropdown-menu profile-menu collapse">
+        <li sec:authorize="hasRole('ROLE_MANAGE_USER')"><a href="/admin/" th:href="@{/admin/}">Admin Page</a> 
+        <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i>
+        </li>
+        <li><a href="#">My Profile</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i>
+        </li>
+        <li><a href="#">Messages</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i>
+        </li>
+        <li><a href="#">Settings</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i>
+        </li>
+        <li><a href="#" onclick="document.getElementById('btn-signout').click()">Sign Out</a><i class="icon left">
+            &#61903;</i><i class="icon right">&#61815;</i>
+        </li>
+        <li><a id="countVisitors">0</a>
+        </li>
+    </ul>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" id="btn-signout" class="hidden"/>
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    </form>
+    <script th:src="@{/resources/javascript/ext/jquery.min.js}" type="text/javascript"></script>
+    <script th:src="@{/resources/javascript/cmonHandle.js}" type="text/javascript"></script>
+</div>
+</body>
+</html>
